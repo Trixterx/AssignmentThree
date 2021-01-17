@@ -32,6 +32,7 @@ namespace AssignmentThree
 
         public void CreateMonsters()
         {
+
         }
 
         public void Menu()
