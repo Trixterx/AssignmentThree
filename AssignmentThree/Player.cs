@@ -9,10 +9,10 @@ namespace AssignmentThree
     public class Player
     {
         private string name;
-        private int level;
-        private int healthPoints;
-        private int damage;
-        private int experience;
+        private int level = 1;
+        private int healthPoints = 200;
+        private int damage = 20;
+        private int experience = 0;
 
         public Player()
         {

@@ -8,10 +8,10 @@ namespace AssignmentThree
 {
     public class SpecificMonster : Monster
     {
-        private int level;
-        private int healthPoints;
-        private int damage;
-        private int experience;
+        private int level = 1;
+        private int healthPoints = 20;
+        private int damage = 10;
+        private int experience = 200;
 
         public SpecificMonster(string name, int level, int healthPoints, int damage, int experience)
         {

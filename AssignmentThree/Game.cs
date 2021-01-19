@@ -14,27 +14,15 @@ namespace AssignmentThree
 
         public void Start()
         {
-            CreatePlayer();
-            CreateMonsters();
+            CharacterName();
             Menu();
         }
 
-        public void CreatePlayer()
+        public void CharacterName()
         {
-            string input;
             Console.WriteLine("Welcome");
             Console.WriteLine("Enter your character name.");
-            input = Console.ReadLine();
-            player.Name = input;
-            player.Level = 1;
-            player.HealthPoints = 200;
-            player.Damage = 20;
-            player.Experience = 0;
-        }
-
-        public void CreateMonsters()
-        {
-
+            player.Name = Console.ReadLine();
         }
 
         public void Menu()
