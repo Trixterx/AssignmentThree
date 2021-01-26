@@ -4,34 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AssignmentThree
+namespace AssignmentThree.Enemies
 {
-    public class Player
+    class Player
     {
         private string name;
-        private int level = 1;
-        private int healthPoints = 200;
-        private int damage = 20;
-        private int experience = 0;
+        private int lvl = 1;
+        private int hp = 200;
+        private int atkDmg = 20;
+        private int exp;
+        private int expToNxtLvl = 100;
+        private int gold;
+        private bool isDead = true;
 
-        public Player()
+        public int attack(IMonster monster)
         {
-
+            monster.takeDamage(AtkDmg);
+            return AtkDmg;
         }
 
-        public Player(string name, int level, int healthPoints, int damage, int experience)
+        public void takeDamage(int monsterdmg)
         {
-            this.Name = name;
-            this.Level = level;
-            this.HealthPoints = healthPoints;
-            this.Damage = damage;
-            this.Experience = experience;
+            hp -= monsterdmg;
         }
 
         public string Name { get => name; set => name = value; }
-        public int Level { get => level; set => level = value; }
-        public int HealthPoints { get => healthPoints; set => healthPoints = value; }
-        public int Damage { get => damage; set => damage = value; }
-        public int Experience { get => experience; set => experience = value; }
+        public int Lvl { get => lvl; set => lvl = value; }
+        public int Hp { get => hp; set => hp = value; }
+        public int AtkDmg { get => atkDmg; set => atkDmg = value; }
+        public int Exp { get => exp; set => exp = value; }
+        public int ExpToNxtLvl { get => expToNxtLvl; set => expToNxtLvl = value; }
+        public int Gold { get => gold; set => gold = value; }
+        public bool IsDead { get => isDead; set => isDead = value; }
     }
 }

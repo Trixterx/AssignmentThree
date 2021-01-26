@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AssignmentThree
+namespace AssignmentThree.Enemies
 {
-    public class SpecificMonster : Monster
+    class SpecificMonster : Monster
     {
         private int level = 1;
         private int healthPoints = 20;

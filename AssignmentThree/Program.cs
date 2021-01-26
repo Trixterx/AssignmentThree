@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Design;
 
-namespace AssignmentThree
+namespace AssignmentThree.Enemies
 {
     class Program
     {

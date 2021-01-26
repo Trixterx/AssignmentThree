@@ -4,21 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AssignmentThree
+namespace AssignmentThree.Enemies
 {
-    public class Game
+    class Game
     {
+        private bool wonGame, lostGame;
         Player player = new Player();
-        List<Monster> listOfMonsters = new List<Monster>();
+        static List<IMonster> listOfMonsters = new List<IMonster>();
         Random rnd = new Random();
 
         public void Start()
         {
-            CharacterName();
+            Setup();
             Menu();
         }
 
-        public void CharacterName()
+        public void Setup()
         {
             Console.WriteLine("Welcome");
             Console.WriteLine("Enter your character name.");
@@ -28,21 +29,30 @@ namespace AssignmentThree
         public void Menu()
         {
             int input;
-            Console.WriteLine("1. Go adventuring");
-            Console.WriteLine("2. Show details about your character");
-            Console.WriteLine("3. Exit game");
-            input = Convert.ToInt32(Console.ReadLine());
-            switch (input)
+            while (!wonGame && !lostGame)
             {
-                case 1:
-                    Adventure();
-                    break;
-                case 2:
-                    ShowDetails();
-                    break;
-                case 3:
-                    Console.WriteLine("Bye bye");
-                    break;
+                Console.WriteLine("1. Go adventuring");
+                Console.WriteLine("2. Show details about your character");
+                Console.WriteLine("3. Exit game");
+                input = Convert.ToInt32(Console.ReadLine());
+                switch (input)
+                {
+                    case 1:
+                        Adventure();
+                        break;
+                    case 2:
+                        ShowDetails();
+                        break;
+                    case 3:
+                        Console.WriteLine("Bye bye");
+                        lostGame = true;
+                        break;
+                }
+            }
+
+            if (wonGame)
+            {
+                Console.WriteLine("Congrats. You won!");
             }
         }
 
@@ -59,13 +69,13 @@ namespace AssignmentThree
             {
                 Fight();
             }
-            Menu();
         }
 
         public void ShowDetails()
         {
-            Console.WriteLine(player.Name);
-            Menu();
+            Console.WriteLine($"Name: {player.Name}\nHealth Points: {player.Hp}\nLevel: {player.Lvl}\nExperience: {player.Exp}/{player.ExpToNxtLvl}\nDamage: {player.AtkDmg}\nGold: {player.Gold}");
+            Console.WriteLine("[Press any key to continue]");
+            Console.ReadKey();
         }
 
         public void Fight()
