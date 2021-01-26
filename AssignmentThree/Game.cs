@@ -24,7 +24,7 @@ namespace AssignmentThree.Enemies
             Console.WriteLine("Welcome");
             Console.WriteLine("Enter your character name.");
             player.Name = Console.ReadLine();
-            SpecificMonster specific = new SpecificMonster();
+            Ninja specific = new Ninja();
             Robot robot = new Robot();
             listOfMonsters.Add(specific);
             listOfMonsters.Add(robot);

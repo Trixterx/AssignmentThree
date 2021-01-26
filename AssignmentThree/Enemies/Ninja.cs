@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AssignmentThree.Enemies
 {
-    class SpecificMonster : Monster
+    class Ninja : Monster
     {
-        public SpecificMonster()
+        public Ninja()
         {
-            base.Name = "Homie";
+            base.Name = "Ninja";
             base.Hp = 100;
             base.MaxHp = 100;
             base.Lvl = 1;
