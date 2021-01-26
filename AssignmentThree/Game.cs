@@ -19,14 +19,16 @@ namespace AssignmentThree.Enemies
             Menu();
         }
 
-        public void Setup()
+        private void Setup()
         {
             Console.WriteLine("Welcome");
             Console.WriteLine("Enter your character name.");
             player.Name = Console.ReadLine();
+            SpecificMonster specific = new SpecificMonster();
+            listOfMonsters.Add(specific);
         }
 
-        public void Menu()
+        private void Menu()
         {
             int input;
             while (!wonGame && !lostGame)
@@ -56,7 +58,7 @@ namespace AssignmentThree.Enemies
             }
         }
 
-        public void Adventure()
+        private void Adventure()
         {
             int random = rnd.Next(1, 11);
             if (random == 10)
@@ -67,20 +69,21 @@ namespace AssignmentThree.Enemies
             }
             else
             {
-                Fight();
+                random = rnd.Next(listOfMonsters.Count);
+                Fight(listOfMonsters[random]);
             }
         }
 
-        public void ShowDetails()
+        private void ShowDetails()
         {
             Console.WriteLine($"Name: {player.Name}\nHealth Points: {player.Hp}\nLevel: {player.Lvl}\nExperience: {player.Exp}/{player.ExpToNxtLvl}\nDamage: {player.AtkDmg}\nGold: {player.Gold}");
             Console.WriteLine("[Press any key to continue]");
             Console.ReadKey();
         }
 
-        public void Fight()
+        private void Fight(IMonster monster)
         {
-            Console.WriteLine("Fight");
+            Console.WriteLine(monster.getName());
         }
     }
 }

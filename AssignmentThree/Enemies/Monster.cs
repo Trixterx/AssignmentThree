@@ -39,7 +39,7 @@ namespace AssignmentThree.Enemies
             return this.exp;
         }
 
-        public int attack()
+        public virtual int attack()
         {
             return rnd.Next(atkDmg);
         }

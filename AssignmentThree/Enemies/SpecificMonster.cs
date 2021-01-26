@@ -8,23 +8,53 @@ namespace AssignmentThree.Enemies
 {
     class SpecificMonster : Monster
     {
-        private int level = 1;
-        private int healthPoints = 20;
-        private int damage = 10;
-        private int experience = 200;
-
-        public SpecificMonster(string name, int level, int healthPoints, int damage, int experience)
+        public SpecificMonster()
         {
-            this.Name = name;
-            this.Level = level;
-            this.HealthPoints = healthPoints;
-            this.Damage = damage;
-            this.Experience = experience;
+            base.Name = "Homie";
+            base.Hp = 100;
+            base.MaxHp = 100;
+            base.Lvl = 1;
+            base.Exp = 100;
+            base.AtkDmg = 20;
+            base.DropGold = 100;
         }
 
-        public int Level { get => level; set => level = value; }
-        public int HealthPoints { get => healthPoints; set => healthPoints = value; }
-        public int Damage { get => damage; set => damage = value; }
-        public int Experience { get => experience; set => experience = value; }
+        public override string getName()
+        {
+            return base.getName();
+        }
+
+        public override int getHp()
+        {
+            return base.getHp();
+        }
+
+        public override int getExp()
+        {
+            return base.getExp();
+        }
+
+        public override int attack()
+        {
+            Console.WriteLine("hi");
+            return base.attack();
+        }
+
+        public override void takeDamage(int dmg)
+        {
+            base.takeDamage(dmg);
+        }
+
+        public override bool isDead()
+        {
+            return base.isDead();
+        }
+
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
     }
 }
