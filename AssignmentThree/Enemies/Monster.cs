@@ -34,6 +34,11 @@ namespace AssignmentThree.Enemies
             return this.hp;
         }
 
+        public virtual int getMaxHp()
+        {
+            return this.maxHp;
+        }
+
         public virtual int getExp()
         {
             return this.exp;

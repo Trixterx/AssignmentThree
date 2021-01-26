@@ -3,7 +3,7 @@ using System.ComponentModel.Design;
 
 namespace AssignmentThree.Enemies
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {

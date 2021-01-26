@@ -18,6 +18,8 @@ namespace AssignmentThree.Enemies
 
         public int getHp();
 
+        public int getMaxHp();
+
         public int getExp();
     }
 }
