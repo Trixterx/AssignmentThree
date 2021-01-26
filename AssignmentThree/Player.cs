@@ -16,7 +16,7 @@ namespace AssignmentThree.Enemies
         private int expToNxtLvl = 100;
         private int gold;
         private bool isDead = true;
-
+        
         public int attack(IMonster monster)
         {
             monster.takeDamage(AtkDmg);

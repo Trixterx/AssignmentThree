@@ -89,21 +89,24 @@ namespace AssignmentThree.Enemies
             {
                 Console.WriteLine($"You hit {monster.getName()} for {player.attack(monster)} damage");
                 Console.WriteLine($"{monster.getName()} HP is now {monster.getHp()}/{monster.getMaxHp()}");
+                
                 if (monster.isDead())
                 {
                     Console.WriteLine($"You killed {monster.getName()} and gained {monster.getExp()} experience");
-                    monster.isDead();
+
                     player.Exp = monster.getExp();
                     if (player.Exp == player.ExpToNxtLvl)
                     {
                         player.Lvl++;
                         player.Exp = 0;
                         player.ExpToNxtLvl += 100;
+                        Console.WriteLine($"Congrats you leveled up and are now level {player.Lvl}");
                     }
+
 
                     if (player.Lvl == 10)
                     {
-                        Console.WriteLine("You won!");
+                        Console.WriteLine("You beat the game!");
                         wonGame = true;
                     }
                 }
