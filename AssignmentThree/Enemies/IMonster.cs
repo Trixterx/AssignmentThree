@@ -21,5 +21,7 @@ namespace AssignmentThree.Enemies
         public int getMaxHp();
 
         public int getExp();
+
+        public int getGold();
     }
 }

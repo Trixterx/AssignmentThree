@@ -54,6 +54,11 @@ namespace AssignmentThree.Enemies
             this.hp -= dmg;
         }
 
+        public virtual int getGold()
+        {
+            return this.dropGold;
+        }
+
         public virtual bool isDead()
         {
             if (this.hp <= 0)

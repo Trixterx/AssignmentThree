@@ -16,11 +16,14 @@ namespace AssignmentThree.Enemies
         private int expToNxtLvl = 100;
         private int gold;
         private bool isDead = true;
-        
+
+        Random rnd = new Random();
+
         public int attack(IMonster monster)
         {
-            monster.takeDamage(AtkDmg);
-            return AtkDmg;
+            int dmg = rnd.Next(atkDmg);
+            monster.takeDamage(dmg);
+            return dmg;
         }
 
         public void takeDamage(int monsterdmg)

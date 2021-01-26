@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AssignmentThree.Enemies
 {
-    class SpecificMonster : Monster
+    class Robot : Monster
     {
-        public SpecificMonster()
+        public Robot()
         {
-            base.Name = "Homie";
+            base.Name = "Robot";
             base.Hp = 100;
             base.MaxHp = 100;
             base.Lvl = 1;
@@ -36,7 +34,7 @@ namespace AssignmentThree.Enemies
 
         public override int attack()
         {
-            Console.WriteLine("hiiiiija");
+            Console.WriteLine("hi");
             return base.attack();
         }
 
@@ -55,6 +53,5 @@ namespace AssignmentThree.Enemies
         {
             return base.ToString();
         }
-
     }
 }

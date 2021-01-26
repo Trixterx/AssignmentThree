@@ -25,7 +25,9 @@ namespace AssignmentThree.Enemies
             Console.WriteLine("Enter your character name.");
             player.Name = Console.ReadLine();
             SpecificMonster specific = new SpecificMonster();
+            Robot robot = new Robot();
             listOfMonsters.Add(specific);
+            listOfMonsters.Add(robot);
         }
 
         private void Menu()
@@ -89,27 +91,36 @@ namespace AssignmentThree.Enemies
             {
                 Console.WriteLine($"You hit {monster.getName()} for {player.attack(monster)} damage");
                 Console.WriteLine($"{monster.getName()} HP is now {monster.getHp()}/{monster.getMaxHp()}");
-                
+
                 if (monster.isDead())
                 {
                     Console.WriteLine($"You killed {monster.getName()} and gained {monster.getExp()} experience");
+                    listOfMonsters.Remove(monster);
 
-                    player.Exp = monster.getExp();
+                    player.Gold += monster.getGold();
+                    player.Exp += monster.getExp();
+
                     if (player.Exp == player.ExpToNxtLvl)
                     {
                         player.Lvl++;
+                        player.Hp += 100;
+                        player.AtkDmg += 10;
                         player.Exp = 0;
                         player.ExpToNxtLvl += 100;
                         Console.WriteLine($"Congrats you leveled up and are now level {player.Lvl}");
                     }
-
 
                     if (player.Lvl == 10)
                     {
                         Console.WriteLine("You beat the game!");
                         wonGame = true;
                     }
+                    return;
                 }
+
+                Console.WriteLine($"{monster.getName()} hit you for {monster.attack()}");
+                player.takeDamage(monster.attack());
+                Console.WriteLine($"Your current hp is {player.Hp}");
             }
         }
     }
