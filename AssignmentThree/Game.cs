@@ -80,7 +80,7 @@ namespace AssignmentThree.Enemies
 
         private void ShowDetails()
         {
-            Console.WriteLine($"Name: {player.Name}\nHealth Points: {player.Hp}\nLevel: {player.Lvl}\nExperience: {player.Exp}/{player.ExpToNxtLvl}\nDamage: {player.AtkDmg}\nGold: {player.Gold}");
+            Console.WriteLine($"Name: {player.Name}\nHP: {player.Hp}\nLevel: {player.Lvl}\nExperience: {player.Exp}/{player.ExpToNxtLvl}\nDamage: {player.AtkDmg}\nGold: {player.Gold}");
             Console.WriteLine("[Press any key to continue]");
             Console.ReadKey();
         }
@@ -92,7 +92,7 @@ namespace AssignmentThree.Enemies
             while (!monster.isDead())
             {
                 Console.WriteLine($"You hit {monster.getName()} for {player.attack(monster)} damage");
-                Console.WriteLine($"{monster.getName()} current hp is {monster.getHp()}/{monster.getMaxHp()}");
+                Console.WriteLine($"{monster.getName()} HP: {monster.getHp()}/{monster.getMaxHp()}");
 
                 if (monster.isDead())
                 {
@@ -120,9 +120,13 @@ namespace AssignmentThree.Enemies
                     return;
                 }
 
-                player.takeDamage(monster.attack());
-                Console.WriteLine($"{monster.getName()} hit you for {monster.attack()} damage");
-                Console.WriteLine($"Your current hp is {player.Hp}/{player.MaxHp}");
+                int monsterdmg = monster.attack();
+                player.takeDamage(monsterdmg);
+                Console.WriteLine($"{monster.getName()} hit you for {monsterdmg} damage");
+                Console.WriteLine($"Your HP: {player.Hp}/{player.MaxHp}");
+
+                Console.WriteLine("[Press any key to continue]");
+                Console.ReadKey();
             }
         }
     }
