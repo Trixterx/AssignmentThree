@@ -46,7 +46,7 @@ namespace AssignmentThree.Enemies
 
         public virtual int attack()
         {
-            return rnd.Next(atkDmg);
+            return rnd.Next(1, atkDmg);
         }
 
         public virtual void takeDamage(int dmg)

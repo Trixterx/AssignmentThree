@@ -24,9 +24,11 @@ namespace AssignmentThree.Enemies
             Console.WriteLine("Welcome");
             Console.WriteLine("Enter your character name.");
             player.Name = Console.ReadLine();
-            Ninja specific = new Ninja();
+            player.Hp = player.MaxHp;
+
+            Ninja ninja = new Ninja();
             Robot robot = new Robot();
-            listOfMonsters.Add(specific);
+            listOfMonsters.Add(ninja);
             listOfMonsters.Add(robot);
         }
 
@@ -90,7 +92,7 @@ namespace AssignmentThree.Enemies
             while (!monster.isDead())
             {
                 Console.WriteLine($"You hit {monster.getName()} for {player.attack(monster)} damage");
-                Console.WriteLine($"{monster.getName()} HP is now {monster.getHp()}/{monster.getMaxHp()}");
+                Console.WriteLine($"{monster.getName()} current hp is {monster.getHp()}/{monster.getMaxHp()}");
 
                 if (monster.isDead())
                 {
@@ -103,7 +105,7 @@ namespace AssignmentThree.Enemies
                     if (player.Exp == player.ExpToNxtLvl)
                     {
                         player.Lvl++;
-                        player.Hp += 100;
+                        player.MaxHp += 100;
                         player.AtkDmg += 10;
                         player.Exp = 0;
                         player.ExpToNxtLvl += 100;
@@ -118,9 +120,9 @@ namespace AssignmentThree.Enemies
                     return;
                 }
 
-                Console.WriteLine($"{monster.getName()} hit you for {monster.attack()}");
                 player.takeDamage(monster.attack());
-                Console.WriteLine($"Your current hp is {player.Hp}");
+                Console.WriteLine($"{monster.getName()} hit you for {monster.attack()} damage");
+                Console.WriteLine($"Your current hp is {player.Hp}/{player.MaxHp}");
             }
         }
     }

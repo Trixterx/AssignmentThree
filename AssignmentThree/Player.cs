@@ -10,7 +10,8 @@ namespace AssignmentThree.Enemies
     {
         private string name;
         private int lvl = 1;
-        private int hp = 200;
+        private int hp;
+        private int maxHp = 200;
         private int atkDmg = 20;
         private int exp;
         private int expToNxtLvl = 100;
@@ -21,7 +22,7 @@ namespace AssignmentThree.Enemies
 
         public int attack(IMonster monster)
         {
-            int dmg = rnd.Next(atkDmg);
+            int dmg = rnd.Next(1, atkDmg);
             monster.takeDamage(dmg);
             return dmg;
         }
@@ -34,6 +35,7 @@ namespace AssignmentThree.Enemies
         public string Name { get => name; set => name = value; }
         public int Lvl { get => lvl; set => lvl = value; }
         public int Hp { get => hp; set => hp = value; }
+        public int MaxHp { get => maxHp; set => maxHp = value; }
         public int AtkDmg { get => atkDmg; set => atkDmg = value; }
         public int Exp { get => exp; set => exp = value; }
         public int ExpToNxtLvl { get => expToNxtLvl; set => expToNxtLvl = value; }
