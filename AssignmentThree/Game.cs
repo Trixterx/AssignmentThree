@@ -28,8 +28,12 @@ namespace AssignmentThree.Enemies
 
             Ninja ninja = new Ninja();
             Robot robot = new Robot();
+            Mouse mouse = new Mouse();
+            Wolf wolf = new Wolf();
             listOfMonsters.Add(ninja);
             listOfMonsters.Add(robot);
+            listOfMonsters.Add(mouse);
+            listOfMonsters.Add(wolf);
         }
 
         private void Menu()

@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace AssignmentThree.Enemies
 {
-    class Robot : Monster
+    class Wolf : Monster
     {
-        public Robot()
+        public Wolf()
         {
-            base.Name = "Robot";
-            base.Hp = 100;
-            base.MaxHp = 100;
-            base.Lvl = 1;
-            base.Exp = 100;
-            base.AtkDmg = 20;
-            base.DropGold = 100;
+            base.Name = "Ninja";
+            base.Hp = 130;
+            base.MaxHp = 130;
+            base.Lvl = 3;
+            base.Exp = 200;
+            base.AtkDmg = 30;
+            base.DropGold = 130;
         }
 
         public override string getName()
@@ -36,7 +36,7 @@ namespace AssignmentThree.Enemies
 
         public override int attack()
         {
-            Console.WriteLine("bzzzzt");
+            Console.WriteLine("hiiiiija");
             return base.attack();
         }
 
@@ -55,5 +55,6 @@ namespace AssignmentThree.Enemies
         {
             return base.ToString();
         }
+
     }
 }
