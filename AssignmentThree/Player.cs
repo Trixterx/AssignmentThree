@@ -10,7 +10,7 @@ namespace AssignmentThree.Enemies
     {
         private string name;
         private int lvl = 1;
-        private int hp;
+        private int hp = 200;
         private int maxHp = 200;
         private int atkDmg = 20;
         private int exp;
@@ -70,6 +70,14 @@ namespace AssignmentThree.Enemies
                 this.dead = false;
             }
             return this.dead;
+        }
+
+        public void godMode()
+        {
+            if (string.Equals(name.Trim(), "Robin", StringComparison.OrdinalIgnoreCase))
+            {
+                AtkDmg = 1000;
+            }
         }
 
         public string Name { get => name; set => name = value; }

@@ -19,11 +19,6 @@ namespace AssignmentThree.Enemies
 
         Random rnd = new Random();
 
-        public Monster()
-        {
-
-        }
-
         public virtual string getName()
         {
             return this.name;

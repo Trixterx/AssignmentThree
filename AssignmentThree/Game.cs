@@ -24,16 +24,16 @@ namespace AssignmentThree.Enemies
             Console.WriteLine("Welcome");
             Console.WriteLine("Enter your character name.");
             player.Name = Console.ReadLine();
-            player.Hp = player.MaxHp;
+            player.godMode();
+            CreateMonsters();
+        }
 
-            Ninja ninja = new Ninja();
-            Robot robot = new Robot();
-            Mouse mouse = new Mouse();
-            Wolf wolf = new Wolf();
-            listOfMonsters.Add(ninja);
-            listOfMonsters.Add(robot);
-            listOfMonsters.Add(mouse);
-            listOfMonsters.Add(wolf);
+        private void CreateMonsters()
+        {
+            listOfMonsters.Add(new Ninja());
+            listOfMonsters.Add(new Robot());
+            listOfMonsters.Add(new Mouse());
+            listOfMonsters.Add(new Wolf());
         }
 
         private void Menu()
@@ -84,7 +84,7 @@ namespace AssignmentThree.Enemies
 
         private void ShowDetails()
         {
-            Console.WriteLine($"Name: {player.Name}\nHP: {player.Hp}\nLevel: {player.Lvl}\nExperience: {player.Exp}/{player.ExpToNxtLvl}\nDamage: {player.AtkDmg}\nGold: {player.Gold}");
+            Console.WriteLine($"Name: {player.Name}\nHP: {player.Hp}/{player.MaxHp}\nLevel: {player.Lvl}\nExperience: {player.Exp}/{player.ExpToNxtLvl}\nDamage: {player.AtkDmg}\nGold: {player.Gold}");
             Console.WriteLine("[Press any key to continue]");
             Console.ReadKey();
         }
