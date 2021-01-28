@@ -16,7 +16,7 @@ namespace AssignmentThree.Enemies
             base.Lvl = 1;
             base.Exp = 100;
             base.AtkDmg = 20;
-            base.DropGold = 100;
+            base.Gold = 100;
         }
 
         public override string getName()
@@ -45,11 +45,15 @@ namespace AssignmentThree.Enemies
             base.takeDamage(dmg);
         }
 
+        public override int getGold()
+        {
+            return base.getGold();
+        }
+
         public override bool isDead()
         {
             return base.isDead();
         }
-
 
         public override string ToString()
         {

@@ -32,6 +32,32 @@ namespace AssignmentThree.Enemies
             hp -= monsterdmg;
         }
 
+        public int getGold(IMonster monster)
+        {
+            gold += monster.getGold();
+            return gold;
+        }
+
+        public int getExp(IMonster monster)
+        {
+            exp += monster.getExp();
+            return exp;
+        }
+
+        public void chkLvl()
+        {
+            if (exp == expToNxtLvl)
+            {
+                Lvl++;
+                maxHp += 100;
+                atkDmg += 10;
+                exp = 0;
+                expToNxtLvl += 100;
+                hp = maxHp;
+                Console.WriteLine($"Congrats you leveled up and are now level {Lvl} and healed to full HP: {hp}/{maxHp}");
+            }
+        }
+
         public string Name { get => name; set => name = value; }
         public int Lvl { get => lvl; set => lvl = value; }
         public int Hp { get => hp; set => hp = value; }

@@ -101,21 +101,11 @@ namespace AssignmentThree.Enemies
                 if (monster.isDead())
                 {
                     Console.WriteLine($"You killed {monster.getName()} and gained {monster.getExp()} experience");
+
                     listOfMonsters.Remove(monster);
-
-                    player.Gold += monster.getGold();
-                    player.Exp += monster.getExp();
-
-                    if (player.Exp == player.ExpToNxtLvl)
-                    {
-                        player.Lvl++;
-                        player.MaxHp += 100;
-                        player.AtkDmg += 10;
-                        player.Exp = 0;
-                        player.ExpToNxtLvl += 100;
-                        player.Hp = player.MaxHp;
-                        Console.WriteLine($"Congrats you leveled up and are now level {player.Lvl} and healed to full HP: {player.Hp}/{player.MaxHp}");
-                    }
+                    player.getGold(monster);
+                    player.getExp(monster);
+                    player.chkLvl();
 
                     if (player.Lvl == 10)
                     {

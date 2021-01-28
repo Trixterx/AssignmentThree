@@ -13,7 +13,7 @@ namespace AssignmentThree.Enemies
         private int hp;
         private int maxHp;
         private int exp;
-        private int dropGold;
+        private int gold;
         private int atkDmg;
         private bool dead;
 
@@ -56,7 +56,7 @@ namespace AssignmentThree.Enemies
 
         public virtual int getGold()
         {
-            return this.dropGold;
+            return this.gold;
         }
 
         public virtual bool isDead()
@@ -77,7 +77,7 @@ namespace AssignmentThree.Enemies
         public int Hp { get => hp; set => hp = value; }
         public int MaxHp { get => maxHp; set => maxHp = value; }
         public int Exp { get => exp; set => exp = value; }
-        public int DropGold { get => dropGold; set => dropGold = value; }
+        public int Gold { get => gold; set => gold = value; }
         public int AtkDmg { get => atkDmg; set => atkDmg = value; }
         public bool Dead { get => dead; set => dead = value; }
     }
