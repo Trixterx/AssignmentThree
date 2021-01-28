@@ -16,7 +16,7 @@ namespace AssignmentThree.Enemies
         private int exp;
         private int expToNxtLvl = 100;
         private int gold;
-        private bool isDead = true;
+        private bool dead;
 
         Random rnd = new Random();
 
@@ -44,18 +44,32 @@ namespace AssignmentThree.Enemies
             return exp;
         }
 
-        public void chkLvl()
+        public void chkLvlUp()
         {
-            if (exp == expToNxtLvl)
+            if (exp >= expToNxtLvl)
             {
                 Lvl++;
                 maxHp += 100;
                 atkDmg += 10;
-                exp = 0;
+                exp -= expToNxtLvl;
                 expToNxtLvl += 100;
                 hp = maxHp;
-                Console.WriteLine($"Congrats you leveled up and are now level {Lvl} and healed to full HP: {hp}/{maxHp}");
+                Console.WriteLine($"Congrats you leveled up and are now level {Lvl}");
+                Console.WriteLine($"You also healed to full HP: {hp}/{maxHp}");
             }
+        }
+
+        public bool isDead()
+        {
+            if (this.hp <= 0)
+            {
+                this.dead = true;
+            }
+            else
+            {
+                this.dead = false;
+            }
+            return this.dead;
         }
 
         public string Name { get => name; set => name = value; }
@@ -66,6 +80,6 @@ namespace AssignmentThree.Enemies
         public int Exp { get => exp; set => exp = value; }
         public int ExpToNxtLvl { get => expToNxtLvl; set => expToNxtLvl = value; }
         public int Gold { get => gold; set => gold = value; }
-        public bool IsDead { get => isDead; set => isDead = value; }
+        public bool Dead { get => dead; set => dead = value; }
     }
 }

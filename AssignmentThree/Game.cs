@@ -93,7 +93,7 @@ namespace AssignmentThree.Enemies
         {
             Console.WriteLine($"You encountered: {monster.getName()}");
 
-            while (!monster.isDead())
+            while (!monster.isDead() && !player.isDead())
             {
                 Console.WriteLine($"You hit {monster.getName()} for {player.attack(monster)} damage");
                 Console.WriteLine($"{monster.getName()} HP: {monster.getHp()}/{monster.getMaxHp()}");
@@ -102,10 +102,10 @@ namespace AssignmentThree.Enemies
                 {
                     Console.WriteLine($"You killed {monster.getName()} and gained {monster.getExp()} experience");
 
-                    listOfMonsters.Remove(monster);
                     player.getGold(monster);
                     player.getExp(monster);
-                    player.chkLvl();
+                    player.chkLvlUp();
+                    listOfMonsters.Remove(monster);
 
                     if (player.Lvl == 10)
                     {
@@ -120,8 +120,13 @@ namespace AssignmentThree.Enemies
                 Console.WriteLine($"{monster.getName()} hit you for {monsterdmg} damage");
                 Console.WriteLine($"Your HP: {player.Hp}/{player.MaxHp}");
 
-                Console.WriteLine("[Press any key to continue]");
-                Console.ReadKey();
+                if (player.isDead())
+                {
+                    Console.WriteLine("You died! Game over!");
+                    lostGame = true;
+                }
+
+               // Console.ReadKey();
             }
         }
     }
