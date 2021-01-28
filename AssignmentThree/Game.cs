@@ -125,8 +125,6 @@ namespace AssignmentThree.Enemies
                     Console.WriteLine("You died! Game over!");
                     lostGame = true;
                 }
-
-               // Console.ReadKey();
             }
         }
     }
