@@ -30,8 +30,8 @@ namespace AssignmentThree.Enemies
 
         private void CreateMonsters()
         {
-            listOfMonsters.Add(new Ninja());
-            listOfMonsters.Add(new Robot());
+            listOfMonsters.Add(new Deer());
+            listOfMonsters.Add(new Boar());
             listOfMonsters.Add(new Mouse());
             listOfMonsters.Add(new Wolf());
         }

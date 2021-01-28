@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AssignmentThree.Enemies
 {
-    class Ninja : Monster
+    class Deer : Monster
     {
-        public Ninja()
+        public Deer()
         {
-            base.Name = "Ninja";
+            base.Name = "Deer";
             base.Hp = 100;
             base.MaxHp = 100;
             base.Lvl = 1;
@@ -36,7 +36,7 @@ namespace AssignmentThree.Enemies
 
         public override int attack()
         {
-            Console.WriteLine("Hiiiiija!");
+            Console.WriteLine("Muuuuju!");
             return base.attack();
         }
 
