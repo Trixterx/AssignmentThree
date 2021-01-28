@@ -113,7 +113,8 @@ namespace AssignmentThree.Enemies
                         player.AtkDmg += 10;
                         player.Exp = 0;
                         player.ExpToNxtLvl += 100;
-                        Console.WriteLine($"Congrats you leveled up and are now level {player.Lvl}");
+                        player.Hp = player.MaxHp;
+                        Console.WriteLine($"Congrats you leveled up and are now level {player.Lvl} and healed to full HP: {player.Hp}/{player.MaxHp}");
                     }
 
                     if (player.Lvl == 10)

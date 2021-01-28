@@ -36,7 +36,7 @@ namespace AssignmentThree.Enemies
 
         public override int attack()
         {
-            Console.WriteLine("hiiiiija");
+            Console.WriteLine("Pip pip!");
             return base.attack();
         }
 
