@@ -51,10 +51,10 @@ namespace AssignmentThree.Store
             int choice = Convert.ToInt32(Console.ReadLine());
 
             Amulet chosenAmulet = listOfAmulets[choice - 1];
-
             Console.WriteLine($"You bought and equipped {chosenAmulet.Name}");
         }
-
+        
+        
         private void CreateAmulets()
         {
             listOfAmulets.Add(new AmuletOfStrength());
