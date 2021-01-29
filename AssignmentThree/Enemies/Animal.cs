@@ -39,6 +39,11 @@ namespace AssignmentThree.Enemies
             return this.exp;
         }
 
+        public virtual int getLvl()
+        {
+            return this.lvl;
+        }
+
         public virtual int attack()
         {
             return rnd.Next(1, atkDmg);

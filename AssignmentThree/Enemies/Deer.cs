@@ -14,7 +14,7 @@ namespace AssignmentThree.Enemies
             base.Hp = 120;
             base.MaxHp = 120;
             base.Lvl = 2;
-            base.Exp = 150;
+            base.Exp = 200;
             base.AtkDmg = 25;
             base.Gold = 120;
         }

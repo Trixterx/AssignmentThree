@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace AssignmentThree.Enemies
 {
-    class Wolf : Animal
+    class Lynx : Animal
     {
-        public Wolf()
+        public Lynx()
         {
-            base.Name = "Wolf";
-            base.Hp = 130;
-            base.MaxHp = 130;
+            base.Name = "Lynx";
+            base.Hp = 120;
+            base.MaxHp = 120;
             base.Lvl = 3;
             base.Exp = 300;
-            base.AtkDmg = 30;
-            base.Gold = 130;
+            base.AtkDmg = 25;
+            base.Gold = 120;
         }
 
         public override string getName()
@@ -36,7 +36,7 @@ namespace AssignmentThree.Enemies
 
         public override int attack()
         {
-            Console.WriteLine("Grrrrr!");
+            Console.WriteLine("Mjaaau!");
             return base.attack();
         }
 

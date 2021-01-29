@@ -57,7 +57,7 @@ namespace AssignmentThree
                 maxHp += 100;
                 atkDmg += 10;
                 exp -= expToNxtLvl;
-                expToNxtLvl += 100;
+                expToNxtLvl += 10;
                 hp = maxHp;
                 Console.WriteLine($"Congrats you leveled up and are now level {Lvl}");
                 Console.WriteLine($"Your powers increased and you healed to full HP: {hp}/{maxHp}");

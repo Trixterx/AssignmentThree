@@ -34,9 +34,21 @@ namespace AssignmentThree
         private void CreateAnimals()
         {
             listOfAnimals.Add(new Mouse());
+            listOfAnimals.Add(new Mouse());
+            listOfAnimals.Add(new Squirrel());
             listOfAnimals.Add(new Squirrel());
             listOfAnimals.Add(new Deer());
+            listOfAnimals.Add(new Deer());
             listOfAnimals.Add(new Wolf());
+            listOfAnimals.Add(new Wolf());
+            listOfAnimals.Add(new Moose());
+            listOfAnimals.Add(new Moose());
+            listOfAnimals.Add(new Fox());
+            listOfAnimals.Add(new Fox());
+            listOfAnimals.Add(new Bird());
+            listOfAnimals.Add(new Bird());
+            listOfAnimals.Add(new Lynx());
+            listOfAnimals.Add(new Lynx());
         }
 
         private void Menu()
@@ -84,8 +96,15 @@ namespace AssignmentThree
             }
             else
             {
-                random = rnd.Next(listOfAnimals.Count);
-                Fight(listOfAnimals[random]);
+                int randomAnimal = rnd.Next(listOfAnimals.Count);
+                if (player.Lvl <= listOfAnimals[randomAnimal].getLvl())
+                {
+                Fight(listOfAnimals[randomAnimal]);
+                }
+                else
+                {
+                    Console.WriteLine("The animal is to high level and you flee!");
+                }
             }
         }
 
