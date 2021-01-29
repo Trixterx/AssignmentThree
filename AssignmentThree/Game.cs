@@ -103,7 +103,7 @@ namespace AssignmentThree
                 }
                 else
                 {
-                    Console.WriteLine("The animal is to high level and you flee!");
+                    Console.WriteLine("The animal you encountered is to high level and you flee!");
                 }
             }
         }
