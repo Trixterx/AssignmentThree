@@ -11,7 +11,7 @@ namespace AssignmentThree.Store
             base.Name = "Amulet of Toughness";
             base.Price = 100;
             base.Strength = 0;
-            base.Toughness = 10;
+            base.Toughness = 50;
         }
     }
 }

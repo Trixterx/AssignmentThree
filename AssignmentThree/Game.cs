@@ -58,8 +58,7 @@ namespace AssignmentThree
                         ShowDetails();
                         break;
                     case 3:
-                        shop.ShopMenu();
-                        
+                        shop.ShopMenu(player);
                         break;
                     case 4:
                         Console.WriteLine("Bye bye");

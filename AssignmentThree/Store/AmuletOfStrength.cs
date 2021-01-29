@@ -10,7 +10,7 @@ namespace AssignmentThree.Store
         {
             base.Name = "Amulet of Strenght";
             base.Price = 100;
-            base.Strength = 10;
+            base.Strength = 50;
             base.Toughness = 0;
         }
     }

@@ -9,7 +9,7 @@ namespace AssignmentThree.Store
         List<Amulet> listOfAmulets = new List<Amulet>();
         private bool shopping = true;
 
-        public void ShopMenu()
+        public void ShopMenu(Player player)
         {
             CreateAmulets();
             while (shopping)
@@ -28,7 +28,7 @@ namespace AssignmentThree.Store
                         ListAmulets();
                         break;
                     case 2:
-                        BuyAmulet();
+                        BuyAmulet(player);
                         break;
                     case 3:
                         shopping = false;
@@ -45,15 +45,25 @@ namespace AssignmentThree.Store
             }
         }
 
-        private void BuyAmulet()
+        private void BuyAmulet(Player player)
         {
             Console.WriteLine("Which one do you wanna buy?");
             int choice = Convert.ToInt32(Console.ReadLine());
 
             Amulet chosenAmulet = listOfAmulets[choice - 1];
             Console.WriteLine($"You bought and equipped {chosenAmulet.Name}");
+
+            if (player.Gold < chosenAmulet.Price)
+            {
+                Console.WriteLine("You can't afford this.");
+            }
+            else
+            {
+                player.Gold -= chosenAmulet.Price;
+                player.AtkDmg += chosenAmulet.Strength;
+                player.MaxHp += chosenAmulet.Toughness;
+            }
         }
-        
         
         private void CreateAmulets()
         {
