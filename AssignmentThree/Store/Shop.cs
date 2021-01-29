@@ -67,8 +67,8 @@ namespace AssignmentThree.Store
         
         private void CreateAmulets()
         {
-            listOfAmulets.Add(new AmuletOfStrength());
-            listOfAmulets.Add(new AmuletOfToughness());
+            listOfAmulets.Add(new AmuletOfAttackPower());
+            listOfAmulets.Add(new AmuletOfHealth());
             listOfAmulets.Add(new AmuletOfAwesomeness());
         }
     }

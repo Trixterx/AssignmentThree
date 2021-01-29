@@ -10,8 +10,8 @@ namespace AssignmentThree.Store
         {
             base.Name = "Amulet of Awesomeness";
             base.Price = 300;
-            base.Strength = 100;
-            base.Toughness = 100;
+            base.AttackPower = 200;
+            base.HpIncrease = 200;
         }
     }
 }
