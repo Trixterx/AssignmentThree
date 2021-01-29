@@ -10,7 +10,7 @@ namespace AssignmentThree.Enemies
     {
         public Wolf()
         {
-            base.Name = "Ninja";
+            base.Name = "Wolf";
             base.Hp = 130;
             base.MaxHp = 130;
             base.Lvl = 3;

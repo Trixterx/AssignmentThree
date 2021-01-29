@@ -15,24 +15,24 @@ namespace AssignmentThree.Enemies
 
         public void Start()
         {
-            Setup();
+            PlayerSetup();
+            CreateMonsters();
             Menu();
         }
 
-        private void Setup()
+        private void PlayerSetup()
         {
             Console.WriteLine("Welcome");
             Console.WriteLine("Enter your character name.");
             player.Name = Console.ReadLine();
             player.godMode();
-            CreateMonsters();
         }
 
         private void CreateMonsters()
         {
-            listOfMonsters.Add(new Deer());
-            listOfMonsters.Add(new Boar());
             listOfMonsters.Add(new Mouse());
+            listOfMonsters.Add(new Squirrel());
+            listOfMonsters.Add(new Deer());
             listOfMonsters.Add(new Wolf());
         }
 

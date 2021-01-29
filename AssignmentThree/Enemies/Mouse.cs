@@ -11,12 +11,12 @@ namespace AssignmentThree.Enemies
         public Mouse()
         {
             base.Name = "Mouse";
-            base.Hp = 120;
-            base.MaxHp = 120;
-            base.Lvl = 2;
-            base.Exp = 150;
-            base.AtkDmg = 25;
-            base.Gold = 120;
+            base.Hp = 100;
+            base.MaxHp = 100;
+            base.Lvl = 1;
+            base.Exp = 100;
+            base.AtkDmg = 20;
+            base.Gold = 100;
         }
 
         public override string getName()
