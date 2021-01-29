@@ -21,7 +21,7 @@ namespace AssignmentThree
 
         Random rnd = new Random();
 
-        public int attack(IMonster monster)
+        public int attack(IAnimal monster)
         {
             int dmg = rnd.Next(1, atkDmg);
             monster.takeDamage(dmg);
@@ -33,13 +33,13 @@ namespace AssignmentThree
             hp -= monsterdmg;
         }
 
-        public int getGold(IMonster monster)
+        public int getGold(IAnimal monster)
         {
             gold += monster.getGold();
             return gold;
         }
 
-        public int getExp(IMonster monster)
+        public int getExp(IAnimal monster)
         {
             exp += monster.getExp();
             return exp;

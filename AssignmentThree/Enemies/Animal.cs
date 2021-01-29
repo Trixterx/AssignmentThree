@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AssignmentThree.Enemies
 {
-    abstract class Monster : IMonster
+    abstract class Animal : IAnimal
     {
         private string name;
         private int lvl;

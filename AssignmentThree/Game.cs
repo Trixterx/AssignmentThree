@@ -13,7 +13,7 @@ namespace AssignmentThree
         private bool wonGame, lostGame;
         Player player = new Player();
         Shop shop = new Shop();
-        static List<IMonster> listOfMonsters = new List<IMonster>();
+        static List<IAnimal> listOfMonsters = new List<IAnimal>();
         Random rnd = new Random();
 
         public void Start()
@@ -97,7 +97,7 @@ namespace AssignmentThree
             Console.ReadKey();
         }
 
-        private void Fight(IMonster monster)
+        private void Fight(IAnimal monster)
         {
             Console.WriteLine($"You encountered: {monster.getName()}");
 

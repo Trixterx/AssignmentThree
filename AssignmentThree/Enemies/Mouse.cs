@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AssignmentThree.Enemies
 {
-    class Mouse : Monster
+    class Mouse : Animal
     {
         public Mouse()
         {

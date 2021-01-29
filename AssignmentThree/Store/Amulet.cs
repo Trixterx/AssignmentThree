@@ -11,7 +11,6 @@ namespace AssignmentThree.Store
         private int strength;
         private int toughness;
 
-
         public string Name { get => name; set => name = value; }
         public int Price { get => price; set => price = value; }
         public int Strength { get => strength; set => strength = value; }

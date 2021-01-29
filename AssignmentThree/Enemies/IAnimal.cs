@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AssignmentThree.Enemies
 {
-    interface IMonster
+    interface IAnimal
     {
         public int attack();
 
