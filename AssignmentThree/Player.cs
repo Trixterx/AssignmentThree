@@ -80,7 +80,10 @@ namespace AssignmentThree
                 AtkDmg = 1000;
             }
         }
+        public void equipAmulet()
+        {
 
+        }
         public string Name { get => name; set => name = value; }
         public int Lvl { get => lvl; set => lvl = value; }
         public int Hp { get => hp; set => hp = value; }

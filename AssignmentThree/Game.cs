@@ -59,6 +59,7 @@ namespace AssignmentThree
                         break;
                     case 3:
                         shop.ShopMenu();
+                        
                         break;
                     case 4:
                         Console.WriteLine("Bye bye");
