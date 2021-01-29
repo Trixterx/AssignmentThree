@@ -8,12 +8,12 @@ namespace AssignmentThree.Store
     {
         private string name;
         private int price;
-        private int attackPower;
-        private int hpIncrease;
+        private int strength;
+        private int toughness;
 
         public string Name { get => name; set => name = value; }
         public int Price { get => price; set => price = value; }
-        public int AttackPower { get => attackPower; set => attackPower = value; }
-        public int HpIncrease { get => hpIncrease; set => hpIncrease = value; }
+        public int Strength { get => strength; set => strength = value; }
+        public int Toughness { get => toughness; set => toughness = value; }
     }
 }

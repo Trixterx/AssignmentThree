@@ -91,7 +91,7 @@ namespace AssignmentThree
 
         private void ShowDetails()
         {
-            Console.WriteLine($"Name: {player.Name}\nHP: {player.Hp}/{player.MaxHp}\nLevel: {player.Lvl}\nExperience: {player.Exp}/{player.ExpToNxtLvl}\nDamage: {player.AtkDmg}\nGold: {player.Gold}");
+            Console.WriteLine($"Name: {player.Name}\nHP: {player.Hp}/{player.MaxHp}\nLevel: {player.Lvl}\nExperience: {player.Exp}/{player.ExpToNxtLvl}\nDamage: {player.AtkDmg}\nGold: {player.Gold}\nStrength: {player.Strength}\nToughness: {player.Toughness}");
         }
 
         private void Fight(IAnimal animal)

@@ -7,15 +7,16 @@ namespace AssignmentThree.Store
     class Shop
     {
         List<Amulet> listOfAmulets = new List<Amulet>();
-        private bool shopping = true;
+        private bool shopping;
 
         public void ShopMenu(Player player)
         {
+            shopping = true;
             CreateAmulets();
             while (shopping)
             {
                 Console.WriteLine("---------------------------------------");
-                Console.WriteLine("Shop");
+                Console.WriteLine("Shop for Amulets");
                 Console.WriteLine("What do you want to do?");
                 Console.WriteLine("1. List amulets");
                 Console.WriteLine("2. Buy");
@@ -44,7 +45,7 @@ namespace AssignmentThree.Store
             int counter = 1;
             foreach (Amulet amulet in listOfAmulets)
             {
-                Console.WriteLine($"{counter}. {amulet.Name}\n   AttackPower: {amulet.AttackPower}\n   Health Increase: {amulet.HpIncrease}\n   Price: {amulet.Price} gold\n");
+                Console.WriteLine($"{counter}. {amulet.Name}\n   Strength: {amulet.Strength}\n   Toughness: {amulet.Toughness}\n   Price: {amulet.Price} gold\n");
                 counter++;
             }
         }
@@ -63,16 +64,16 @@ namespace AssignmentThree.Store
             else
             {
                 player.Gold -= chosenAmulet.Price;
-                player.AtkDmg += chosenAmulet.AttackPower;
-                player.MaxHp += chosenAmulet.HpIncrease;
+                player.Strength += chosenAmulet.Strength;
+                player.Toughness += chosenAmulet.Toughness;
                 Console.WriteLine($"You bought and equipped {chosenAmulet.Name}");
             }
         }
         
         private void CreateAmulets()
         {
-            listOfAmulets.Add(new AmuletOfAttackPower());
-            listOfAmulets.Add(new AmuletOfHealth());
+            listOfAmulets.Add(new AmuletOfStrength());
+            listOfAmulets.Add(new AmuletOfToughness());
             listOfAmulets.Add(new AmuletOfAwesomeness());
         }
     }

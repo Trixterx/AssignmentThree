@@ -17,6 +17,8 @@ namespace AssignmentThree
         private int exp;
         private int expToNxtLvl = 100;
         private int gold;
+        private int strength;
+        private int toughness;
         private bool dead;
 
         Random rnd = new Random();
@@ -24,12 +26,14 @@ namespace AssignmentThree
         public int attack(IAnimal monster)
         {
             int dmg = rnd.Next(1, atkDmg);
+            dmg += rnd.Next(strength, strength * 2);
             monster.takeDamage(dmg);
             return dmg;
         }
 
         public void takeDamage(int monsterdmg)
         {
+            monsterdmg -= Toughness;
             hp -= monsterdmg;
         }
 
@@ -56,7 +60,7 @@ namespace AssignmentThree
                 expToNxtLvl += 100;
                 hp = maxHp;
                 Console.WriteLine($"Congrats you leveled up and are now level {Lvl}");
-                Console.WriteLine($"You also healed to full HP: {hp}/{maxHp}");
+                Console.WriteLine($"Your powers increased and you healed to full HP: {hp}/{maxHp}");
             }
         }
 
@@ -90,6 +94,8 @@ namespace AssignmentThree
         public int Exp { get => exp; set => exp = value; }
         public int ExpToNxtLvl { get => expToNxtLvl; set => expToNxtLvl = value; }
         public int Gold { get => gold; set => gold = value; }
+        public int Strength { get => strength; set => strength = value; }
+        public int Toughness { get => toughness; set => toughness = value; }
         public bool Dead { get => dead; set => dead = value; }
     }
 }
