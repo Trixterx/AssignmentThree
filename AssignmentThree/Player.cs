@@ -77,6 +77,7 @@ namespace AssignmentThree
         {
             if (string.Equals(name.Trim(), "Robin", StringComparison.OrdinalIgnoreCase))
             {
+                Console.WriteLine("Hello Robin, GodMode Activated!");
                 AtkDmg = 1000;
             }
         }

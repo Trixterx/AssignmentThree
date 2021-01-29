@@ -14,11 +14,13 @@ namespace AssignmentThree.Store
             CreateAmulets();
             while (shopping)
             {
+                Console.WriteLine("---------------------------------------");
                 Console.WriteLine("Shop");
                 Console.WriteLine("What do you want to do?");
                 Console.WriteLine("1. List amulets");
                 Console.WriteLine("2. Buy");
                 Console.WriteLine("3. Exit shop");
+                Console.WriteLine("---------------------------------------");
 
                 int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -39,9 +41,11 @@ namespace AssignmentThree.Store
 
         private void ListAmulets()
         {
+            int counter = 1;
             foreach (Amulet amulet in listOfAmulets)
             {
-                Console.WriteLine($"{amulet.Name}\nStrength: {amulet.Strength}\nToughness: {amulet.Toughness}\nPrice: {amulet.Price} gold");
+                Console.WriteLine($"{counter}. {amulet.Name}\n   AttackPower: {amulet.AttackPower}\n   Health Increase: {amulet.HpIncrease}\n   Price: {amulet.Price} gold\n");
+                counter++;
             }
         }
 
@@ -51,7 +55,6 @@ namespace AssignmentThree.Store
             int choice = Convert.ToInt32(Console.ReadLine());
 
             Amulet chosenAmulet = listOfAmulets[choice - 1];
-            Console.WriteLine($"You bought and equipped {chosenAmulet.Name}");
 
             if (player.Gold < chosenAmulet.Price)
             {
@@ -60,8 +63,9 @@ namespace AssignmentThree.Store
             else
             {
                 player.Gold -= chosenAmulet.Price;
-                player.AtkDmg += chosenAmulet.Strength;
-                player.MaxHp += chosenAmulet.Toughness;
+                player.AtkDmg += chosenAmulet.AttackPower;
+                player.MaxHp += chosenAmulet.HpIncrease;
+                Console.WriteLine($"You bought and equipped {chosenAmulet.Name}");
             }
         }
         

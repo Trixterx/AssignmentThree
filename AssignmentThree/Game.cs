@@ -13,13 +13,13 @@ namespace AssignmentThree
         private bool wonGame, lostGame;
         Player player = new Player();
         Shop shop = new Shop();
-        static List<IAnimal> listOfMonsters = new List<IAnimal>();
+        static List<IAnimal> listOfAnimals = new List<IAnimal>();
         Random rnd = new Random();
 
         public void Start()
         {
             PlayerSetup();
-            CreateMonsters();
+            CreateAnimals();
             Menu();
         }
 
@@ -31,12 +31,12 @@ namespace AssignmentThree
             player.godMode();
         }
 
-        private void CreateMonsters()
+        private void CreateAnimals()
         {
-            listOfMonsters.Add(new Mouse());
-            listOfMonsters.Add(new Squirrel());
-            listOfMonsters.Add(new Deer());
-            listOfMonsters.Add(new Wolf());
+            listOfAnimals.Add(new Mouse());
+            listOfAnimals.Add(new Squirrel());
+            listOfAnimals.Add(new Deer());
+            listOfAnimals.Add(new Wolf());
         }
 
         private void Menu()
@@ -44,10 +44,12 @@ namespace AssignmentThree
             int input;
             while (!wonGame && !lostGame)
             {
+                Console.WriteLine("---------------------------------------");
                 Console.WriteLine("1. Go adventuring");
                 Console.WriteLine("2. Show details about your character");
                 Console.WriteLine("3. Go to shop");
                 Console.WriteLine("4. Exit game");
+                Console.WriteLine("---------------------------------------");
                 input = Convert.ToInt32(Console.ReadLine());
                 switch (input)
                 {
@@ -79,40 +81,36 @@ namespace AssignmentThree
             if (random == 10)
             {
                 Console.WriteLine("Nothing Happened");
-                Console.WriteLine("[Press any key to continue]");
-                Console.ReadKey();
             }
             else
             {
-                random = rnd.Next(listOfMonsters.Count);
-                Fight(listOfMonsters[random]);
+                random = rnd.Next(listOfAnimals.Count);
+                Fight(listOfAnimals[random]);
             }
         }
 
         private void ShowDetails()
         {
             Console.WriteLine($"Name: {player.Name}\nHP: {player.Hp}/{player.MaxHp}\nLevel: {player.Lvl}\nExperience: {player.Exp}/{player.ExpToNxtLvl}\nDamage: {player.AtkDmg}\nGold: {player.Gold}");
-            Console.WriteLine("[Press any key to continue]");
-            Console.ReadKey();
         }
 
-        private void Fight(IAnimal monster)
+        private void Fight(IAnimal animal)
         {
-            Console.WriteLine($"You encountered: {monster.getName()}");
+            Console.WriteLine($"You encountered: {animal.getName()}");
 
-            while (!monster.isDead() && !player.isDead())
+            while (!animal.isDead() && !player.isDead())
             {
-                Console.WriteLine($"You hit {monster.getName()} for {player.attack(monster)} damage");
-                Console.WriteLine($"{monster.getName()} HP: {monster.getHp()}/{monster.getMaxHp()}");
+                Console.WriteLine($"You hit {animal.getName()} for {player.attack(animal)} damage");
+                Console.WriteLine($"{animal.getName()} HP: {animal.getHp()}/{animal.getMaxHp()}");
 
-                if (monster.isDead())
+                if (animal.isDead())
                 {
-                    Console.WriteLine($"You killed {monster.getName()} and gained {monster.getExp()} experience");
+                    Console.WriteLine($"You killed {animal.getName()} and gained {animal.getExp()} experience");
 
-                    player.getGold(monster);
-                    player.getExp(monster);
+                    player.getGold(animal);
+                    player.getExp(animal);
                     player.chkLvlUp();
-                    listOfMonsters.Remove(monster);
+                    listOfAnimals.Remove(animal);
 
                     if (player.Lvl == 10)
                     {
@@ -122,9 +120,9 @@ namespace AssignmentThree
                     return;
                 }
 
-                int monsterdmg = monster.attack();
-                player.takeDamage(monsterdmg);
-                Console.WriteLine($"{monster.getName()} hit you for {monsterdmg} damage");
+                int animalDmg = animal.attack();
+                player.takeDamage(animalDmg);
+                Console.WriteLine($"{animal.getName()} hit you for {animalDmg} damage");
                 Console.WriteLine($"Your HP: {player.Hp}/{player.MaxHp}");
 
                 if (player.isDead())
