@@ -1,10 +1,11 @@
-﻿using System;
+﻿using AssignmentThree.Enemies;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AssignmentThree.Enemies
+namespace AssignmentThree
 {
     class Player
     {

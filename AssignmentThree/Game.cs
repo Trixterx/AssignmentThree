@@ -1,15 +1,18 @@
-﻿using System;
+﻿using AssignmentThree.Enemies;
+using AssignmentThree.Store;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AssignmentThree.Enemies
+namespace AssignmentThree
 {
     class Game
     {
         private bool wonGame, lostGame;
         Player player = new Player();
+        Shop shop = new Shop();
         static List<IMonster> listOfMonsters = new List<IMonster>();
         Random rnd = new Random();
 
@@ -43,7 +46,8 @@ namespace AssignmentThree.Enemies
             {
                 Console.WriteLine("1. Go adventuring");
                 Console.WriteLine("2. Show details about your character");
-                Console.WriteLine("3. Exit game");
+                Console.WriteLine("3. Go to shop");
+                Console.WriteLine("4. Exit game");
                 input = Convert.ToInt32(Console.ReadLine());
                 switch (input)
                 {
@@ -54,6 +58,9 @@ namespace AssignmentThree.Enemies
                         ShowDetails();
                         break;
                     case 3:
+                        shop.ShopMenu();
+                        break;
+                    case 4:
                         Console.WriteLine("Bye bye");
                         lostGame = true;
                         break;
