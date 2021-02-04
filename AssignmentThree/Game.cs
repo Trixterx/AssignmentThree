@@ -121,7 +121,7 @@ namespace AssignmentThree
             {
                 Console.WriteLine($"You hit {animal.getName()} for {player.attack(animal)} damage");
                 Console.WriteLine($"{animal.getName()} HP: {animal.getHp()}/{animal.getMaxHp()}");
-
+                
                 if (animal.isDead())
                 {
                     Console.WriteLine($"You killed {animal.getName()} and gained {animal.getExp()} experience");
