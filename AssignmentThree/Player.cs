@@ -49,7 +49,7 @@ namespace AssignmentThree
             return exp;
         }
 
-        public void chkLvlUp()
+        public void CheckLevelUp()
         {
             if (exp >= expToNxtLvl)
             {
@@ -77,7 +77,7 @@ namespace AssignmentThree
             return this.dead;
         }
 
-        public void godMode()
+        public void GodMode()
         {
             if (string.Equals(name.Trim(), "Robin", StringComparison.OrdinalIgnoreCase))
             {

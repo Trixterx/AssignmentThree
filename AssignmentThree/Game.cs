@@ -28,7 +28,7 @@ namespace AssignmentThree
             Console.WriteLine("Welcome");
             Console.WriteLine("Enter your character name.");
             player.Name = Console.ReadLine();
-            player.godMode();
+            player.GodMode();
         }
 
         private void CreateAnimals()
@@ -128,7 +128,7 @@ namespace AssignmentThree
 
                     player.getGold(animal);
                     player.getExp(animal);
-                    player.chkLvlUp();
+                    player.CheckLevelUp();
                     listOfAnimals.Remove(animal);
 
                     if (player.Lvl == 10)
